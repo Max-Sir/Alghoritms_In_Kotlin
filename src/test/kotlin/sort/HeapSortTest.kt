@@ -3,10 +3,11 @@ package sort
 import HeapSort
 import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Test
+import kotlin.random.Random
 import kotlin.reflect.jvm.isAccessible
 import kotlin.test.assertEquals
 
-class HeapSortTest {
+internal class HeapSortTest {
 
     @Test
     fun `test heap sort with int array`() {
@@ -138,7 +139,7 @@ class HeapSortTest {
     fun heapifyTest() {
         val array = arrayOf(5, 4, 1, 3, 2)
         val heapSort = HeapSort(array)
-        val method = HeapSort::class.members.single{it.name == "heapify"}
+        val method = HeapSort::class.members.single { it.name == "heapify" }
         method.isAccessible = true
         method.call(heapSort, array, 0, array.size)
         assertArrayEquals(array, arrayOf(5, 4, 1, 3, 2))
@@ -148,9 +149,18 @@ class HeapSortTest {
     fun swapTest() {
         val array = arrayOf(5, 4, 1, 3, 2)
         val heapSort = HeapSort(array)
-        val method = HeapSort::class.members.single{it.name == "swap"}
+        val method = HeapSort::class.members.single { it.name == "swap" }
         method.isAccessible = true
         method.call(heapSort, array, 0, 4)
         assertArrayEquals(array, arrayOf(2, 4, 1, 3, 5))
+    }
+
+    @Test
+    fun `big array testing`() {
+        val array = IntArray(1_000_000) { Random.nextInt(-10000, 10000) }.toTypedArray()
+        val heapSort = HeapSort(array)
+        val expected = array.sortedArray()
+        heapSort.sort()
+        assertArrayEquals(array, expected)
     }
 }
