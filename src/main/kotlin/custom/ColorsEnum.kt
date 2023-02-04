@@ -1,5 +1,4 @@
-package custom
-
+// Making the ColorsEnum class ThreadSafe
 class ColorsEnum  // Private constructor
 private constructor() {
     fun ordinal(): Int {
@@ -13,14 +12,16 @@ private constructor() {
     companion object {
         // Public static method to get the single instance of the class
         // Private static member to hold the single instance of ColorsEnum
-        var instance: ColorsEnum? = null
-            get() {
-                if (field == null) {
-                    field = ColorsEnum()
-                }
-                return field
+        @Volatile
+        private var instance: ColorsEnum? = null
+
+        @Synchronized
+        fun getInstance(): ColorsEnum? {
+            if (instance == null) {
+                instance = ColorsEnum()
             }
-            private set
+            return instance
+        }
 
         val values: Array<ColorsEnum>
             get() = arrayOf(RED, BLUE, GREEN, ORANGE, YELLOW, WHITE, BLACK)
