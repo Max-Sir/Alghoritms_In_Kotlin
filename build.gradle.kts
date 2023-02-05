@@ -61,6 +61,7 @@ tasks.withType<KotlinCompile> {
 
 detekt {
     autoCorrect = true
+//    config = files("${project.rootDir}/detekt.yml")
     input = files("src/main/kotlin")
     reports {
         xml.enabled = true

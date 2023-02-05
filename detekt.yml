@@ -1,0 +1,25 @@
+formatting:
+  enabled: true
+  style: google
+  indentSize: 4
+  lineSeparator: '\n'
+
+baseline:
+  enabled: false
+
+metrics:
+  enabled: true
+  complexity:
+    max: 10
+
+thresholds:
+  maximumLineLength: 120
+
+style:
+  enabled: true
+  useExperimental: false
+  rules:
+    - NoUnitReturnType
+    - NestedBlockDepth
+    - NoWildcardImports
+    - NoEmptyClasses
