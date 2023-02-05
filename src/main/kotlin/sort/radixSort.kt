@@ -1,3 +1,4 @@
+@file:Suppress("MagicNumber")
 package sort
 
 import java.util.*

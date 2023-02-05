@@ -2,9 +2,9 @@
 class ColorsEnum  // Private constructor
 private constructor() {
     fun ordinal(): Int {
-        val ColorsEnum = values
-        for (i in ColorsEnum.indices) {
-            if (this === ColorsEnum[i]) return i
+        val colorsEnum = values
+        for (i in colorsEnum.indices) {
+            if (this === colorsEnum[i]) return i
         }
         return -1
     }

@@ -60,6 +60,7 @@ tasks.withType<KotlinCompile> {
 }
 
 detekt {
+    autoCorrect = true
     input = files("src/main/kotlin")
     reports {
         xml.enabled = true

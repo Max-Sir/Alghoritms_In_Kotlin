@@ -1,3 +1,6 @@
+@file:Suppress("MagicNumber")
+
+package sort
 // Heap Sort is a comparison-based sorting algorithm which uses a Binary Heap data structure to sort an array in-place.
 // It is an in-place algorithm with a worst-case time complexity of O(n*log(n)).
 
@@ -6,7 +9,8 @@ import java.util.concurrent.ThreadPoolExecutor
 import java.util.concurrent.TimeUnit
 
 // This class implements a ThreadPool which will be used to execute the operations of Heap Sort.
-// It is thread-safe because all its operations are synchronized, thus making sure only one thread can execute a task at a time.
+// It is thread-safe because all its operations are synchronized, thus making sure only one thread
+// can execute a task at a time.
 internal class ThreadPool {
     private var threadPoolExecutor: ThreadPoolExecutor
     private val corePoolSize = 4
@@ -48,9 +52,9 @@ class HeapSort<T : Comparable<T>>(private val array: Array<T>) {
             swap(array, 0, i)
             heapify(array, 0, i)
         }
-        threadPool.execute(Runnable {
+        threadPool.execute {
             threadPool.shutdown()
-        })
+        }
     }
 
     // This method is responsible for building a max heap from the array.
