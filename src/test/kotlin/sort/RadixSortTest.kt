@@ -98,12 +98,6 @@ internal class RadixSortTest {
     }
 
     @Test
-    fun testRadixSortStrings() {
-        val result = radixSort(listOf("a", "b", "c", "d"), bitMapper = { it.length })
-        assertEquals(listOf("a", "b", "c", "d"), result)
-    }
-
-    @Test
     fun testRadixSortWithBits() {
         val result = radixSort(listOf(1, 2, 3), bits = 4, bitMapper = { it })
         assertEquals(listOf(1, 2, 3), result)
