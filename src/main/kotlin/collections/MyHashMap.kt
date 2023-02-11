@@ -193,3 +193,44 @@ class MyHashMap<K, V> {
     // Node class for storing key-value pairs
     data class Node<K, V>(override val key: K, override var value: V) : Map.Entry<K, V>
 }
+
+
+fun main() {
+    val map = MyHashMap<String, String>()
+    println("Size of HashMap: ${map.size()}")
+    println("Threshold of HashMap: ${map.threshold()}")
+    println("Load factor of HashMap: ${map.loadFactor()}")
+    println("Is empty: ${map.isEmpty()}")
+
+    map.put("A", "Apple")
+    map.put("B", "Banana")
+    map.put("C", "Cherry")
+
+    println("Size of HashMap: ${map.size()}")
+    println("Threshold of HashMap: ${map.threshold()}")
+
+    println("Contains 'A'? ${map.containsKey("A")}")
+    println("Contains 'Apple'? ${map.containsValue("Apple")}")
+    println("Value at 'A': ${map.get("A")}")
+
+    map.put("A", "Avocado")
+    println("Value at 'A': ${map.get("A")}")
+
+    map.remove("A")
+    println("Size of HashMap: ${map.size()}")
+
+    val newMap = MyHashMap<String, String>()
+    newMap.put("D", "Durian")
+    newMap.put("E", "Eggfruit")
+    newMap.put("E","Frateizer")
+    newMap.put("F", "Fig")
+    map.putAll(newMap)
+    println("Size of HashMap: ${map.size()}")
+
+    println("Key set: ${map.keySet()}")
+    println("Value set: ${map.values()}")
+    println("Entry set: ${map.entrySet()}")
+
+    map.clear()
+    println("Size of HashMap: ${map.size()}")
+}
