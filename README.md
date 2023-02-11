@@ -6,8 +6,8 @@ I configured here static analyzer : detekt
 Covered by Unit tests using: Kotest, JUnit4, JUnit5
 
 Implemented:
-            <p>- BOGO Sort O(n*n!)</p>
-            <p>- Radix Sort O(n*k)</p>
+            <p>- BOGO Sort O(n* n!)</p>
+            <p>- Radix Sort O(n* k)</p>
             <p>- Heap Sort O(n*log2 n)</p>
 
 also implemented
