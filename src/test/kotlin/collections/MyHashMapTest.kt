@@ -1,7 +1,7 @@
 package collections
 
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Test
 
 class MyHashMapTest {
 
@@ -9,62 +9,62 @@ class MyHashMapTest {
 
     @Test
     fun testSize() {
-        Assert.assertEquals(0, myHashMap.size())
+        assertEquals(0, myHashMap.size())
         myHashMap.put("1", 1)
-        Assert.assertEquals(1, myHashMap.size())
+        assertEquals(1, myHashMap.size())
     }
 
     @Test
     fun testThreshold() {
-        Assert.assertEquals(0, myHashMap.threshold())
+        assertEquals(0, myHashMap.threshold())
         myHashMap.put("1", 1)
-        Assert.assertEquals(1, myHashMap.threshold())
+        assertEquals(1, myHashMap.threshold())
     }
 
     @Test
     fun testLoadFactor() {
-        Assert.assertEquals(0.75F, myHashMap.loadFactor(), 0.001F)
+        assertEquals(0.75F, myHashMap.loadFactor(), 0.001F)
     }
 
     @Test
     fun testIsEmpty() {
-        Assert.assertTrue(myHashMap.isEmpty())
+        assertTrue(myHashMap.isEmpty())
         myHashMap.put("1", 1)
-        Assert.assertFalse(myHashMap.isEmpty())
+        assertFalse(myHashMap.isEmpty())
     }
 
     @Test
     fun testContainsKey() {
-        Assert.assertFalse(myHashMap.containsKey("1"))
+        assertFalse(myHashMap.containsKey("1"))
         myHashMap.put("1", 1)
-        Assert.assertTrue(myHashMap.containsKey("1"))
+        assertTrue(myHashMap.containsKey("1"))
     }
 
     @Test
     fun testContainsValue() {
-        Assert.assertFalse(myHashMap.containsValue(1))
+        assertFalse(myHashMap.containsValue(1))
         myHashMap.put("1", 1)
-        Assert.assertTrue(myHashMap.containsValue(1))
+        assertTrue(myHashMap.containsValue(1))
     }
 
     @Test
     fun testGet() {
-        Assert.assertNull(myHashMap.get("1"))
+        assertNull(myHashMap.get("1"))
         myHashMap.put("1", 1)
-        Assert.assertEquals(1, myHashMap.get("1"))
+        assertEquals(1, myHashMap.get("1"))
     }
 
     @Test
     fun testPut() {
-        Assert.assertNull(myHashMap.put("1", 1))
-        Assert.assertEquals(1, myHashMap.put("1", 2))
+        assertNull(myHashMap.put("1", 1))
+        assertEquals(1, myHashMap.put("1", 2))
     }
 
     @Test
     fun testRemove() {
-        Assert.assertNull(myHashMap.remove("1"))
+        assertNull(myHashMap.remove("1"))
         myHashMap.put("1", 1)
-        Assert.assertEquals(1, myHashMap.remove("1"))
+        assertEquals(1, myHashMap.remove("1"))
     }
 
     @Test
@@ -73,14 +73,14 @@ class MyHashMapTest {
         map.put("1", 1)
         map.put("2", 2)
         myHashMap.putAll(map)
-        Assert.assertEquals(2, myHashMap.size())
+        assertEquals(2, myHashMap.size())
     }
 
     @Test
     fun testClear() {
         myHashMap.put("1", 1)
         myHashMap.clear()
-        Assert.assertEquals(0, myHashMap.size())
+        assertEquals(0, myHashMap.size())
     }
 
     @Test
@@ -88,8 +88,8 @@ class MyHashMapTest {
         myHashMap.put("1", 1)
         myHashMap.put("2", 2)
         val set = myHashMap.keySet()
-        Assert.assertTrue(set.contains("1"))
-        Assert.assertTrue(set.contains("2"))
+        assertTrue(set.contains("1"))
+        assertTrue(set.contains("2"))
     }
 
     @Test
@@ -97,8 +97,8 @@ class MyHashMapTest {
         myHashMap.put("1", 1)
         myHashMap.put("2", 2)
         val list = myHashMap.values()
-        Assert.assertTrue(list.contains(1))
-        Assert.assertTrue(list.contains(2))
+        assertTrue(list.contains(1))
+        assertTrue(list.contains(2))
     }
 
     @Test
@@ -106,6 +106,6 @@ class MyHashMapTest {
         myHashMap.put("1", 1)
         myHashMap.put("2", 2)
         val set = myHashMap.entrySet()
-        Assert.assertEquals(2, set.size)
+        assertEquals(2, set.size)
     }
 }
