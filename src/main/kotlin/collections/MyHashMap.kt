@@ -195,42 +195,42 @@ class MyHashMap<K, V> {
 }
 
 
-fun main() {
-    val map = MyHashMap<String, String>()
-    println("Size of HashMap: ${map.size()}")
-    println("Threshold of HashMap: ${map.threshold()}")
-    println("Load factor of HashMap: ${map.loadFactor()}")
-    println("Is empty: ${map.isEmpty()}")
+fun example() {
+    val hashmap = MyHashMap<String, String>()
+    println("Size of HashMap: ${hashmap.size()}")
+    println("Threshold of HashMap: ${hashmap.threshold()}")
+    println("Load factor of HashMap: ${hashmap.loadFactor()}")
+    println("Is empty: ${hashmap.isEmpty()}")
 
-    map.put("A", "Apple")
-    map.put("B", "Banana")
-    map.put("C", "Cherry")
+    hashmap.put("A", "Apple")
+    hashmap.put("B", "Banana")
+    hashmap.put("C", "Cherry")
 
-    println("Size of HashMap: ${map.size()}")
-    println("Threshold of HashMap: ${map.threshold()}")
+    println("Size of HashMap: ${hashmap.size()}")
+    println("Threshold of HashMap: ${hashmap.threshold()}")
 
-    println("Contains 'A'? ${map.containsKey("A")}")
-    println("Contains 'Apple'? ${map.containsValue("Apple")}")
-    println("Value at 'A': ${map.get("A")}")
+    println("Contains 'A'? ${hashmap.containsKey("A")}")
+    println("Contains 'Apple'? ${hashmap.containsValue("Apple")}")
+    println("Value at 'A': ${hashmap.get("A")}")
 
-    map.put("A", "Avocado")
-    println("Value at 'A': ${map.get("A")}")
+    hashmap.put("A", "Avocado")
+    println("Value at 'A': ${hashmap.get("A")}")
 
-    map.remove("A")
-    println("Size of HashMap: ${map.size()}")
+    hashmap.remove("A")
+    println("Size of HashMap: ${hashmap.size()}")
 
     val newMap = MyHashMap<String, String>()
     newMap.put("D", "Durian")
     newMap.put("E", "Eggfruit")
     newMap.put("E","Frateizer")
     newMap.put("F", "Fig")
-    map.putAll(newMap)
-    println("Size of HashMap: ${map.size()}")
+    hashmap.putAll(newMap)
+    println("Size of HashMap: ${hashmap.size()}")
 
-    println("Key set: ${map.keySet()}")
-    println("Value set: ${map.values()}")
-    println("Entry set: ${map.entrySet()}")
+    println("Key set: ${hashmap.keySet()}")
+    println("Value set: ${hashmap.values()}")
+    println("Entry set: ${hashmap.entrySet()}")
 
-    map.clear()
-    println("Size of HashMap: ${map.size()}")
+    hashmap.clear()
+    println("Size of HashMap: ${hashmap.size()}")
 }
